@@ -28,4 +28,5 @@ class handler(BaseHTTPRequestHandler):
             return self._send(400, {"ok": False, "error": "mangler msg"})
 
         ENTRIES.append(msg)
-        self._send(200, {"ok": True, "count": len(ENTRIES)})
+        self._send(200, {"ok": True, "added": msg, "entries": ENTRIES})
+
